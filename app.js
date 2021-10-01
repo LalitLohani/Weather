@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 
 app.post('/', (req, res) => {
   const location = req.body.location;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=271d1234d3f497eed5b1d80a07b3fcd1`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=a3fa929a5a7fb4365ea46c103e2db342`;
   https.get(url, (response) => {
     if (response.statusCode == 200) {
       response.on("data", (data) => {
@@ -34,4 +34,4 @@ app.post('/', (req, res) => {
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => console.log("Port running in " + port));
+app.listen(port, () => console.log(`Port running in ${port}`));
